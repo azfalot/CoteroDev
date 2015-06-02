@@ -1,0 +1,26 @@
+<html lang="es">
+  <head>
+    <title>Mi Primer mapa</title>
+    <script src="http://openlayers.org/en/master/build/ol.js"></script> <!-- Libreria de OpenLayers 3 -->
+  </head>
+  <body>
+      <div id="miMapa"></div> <!-- Div que contendra el mapa -->
+  </body>
+  <script type="text/javascript">
+  
+//Layer de Open Street Map		
+	var layerOSM = new ol.layer.Tile({
+		source: new ol.source.OSM() // Usaremos la src de Open Street Maps como Layer principal
+	});
+	
+//Mapa de OL3 con una configuracion determinada
+	var map = new ol.Map({
+	  view: new ol.View({
+		center: [-426260.65257139556, 5382402.125379978], //Coordenadas de Santander
+		zoom: 12 										  //Zoom que tendra el mapa una  ves abierto
+	  }),
+	  layers: [layerOSM], //Layer asignado
+	  target: 'miMapa' 	  //Elemento del DOM que contendra el mapa
+	});
+    </script>
+</html>
